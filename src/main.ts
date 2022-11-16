@@ -209,7 +209,7 @@ async function main() {
     }
     catch (error) {
         if (!isAzCLISuccess) {
-            core.setFailed("Az CLI Login failed. Please check the credentials and make sure az is installed on the runner. For more information refer https://aka.ms/create-secrets-for-GitHub-workflows");
+            core.setFailed(`Az CLI Login failed. Please check the credentials and make sure az is installed on the runner. For more information refer https://aka.ms/create-secrets-for-GitHub-workflows: "${error}"`);
         }
         else {
             core.setFailed(`Azure PowerShell Login failed. Please check the credentials and make sure az is installed on the runner. For more information refer https://aka.ms/create-secrets-for-GitHub-workflows"`);
